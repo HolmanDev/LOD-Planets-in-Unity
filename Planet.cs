@@ -9,21 +9,24 @@ public class Planet : MonoBehaviour
     MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
 
-    public static float size = 10; // Must be set to the size of the planet defined in the inspector
+    public int startResolution = 9;
+    public float cullingMinAngle = 1.91986218f;
+    public float size = 1000; // Must be set to the size of the planet defined in the inspector
 
-    public static Transform player;
+    public Transform player;
+    public float distanceToPlayer;
 
     // Hardcoded detail levels. First value is level, second is distance from player. Finding the right values can be a little tricky
-    public static Dictionary<int, float> detailLevelDistances = new Dictionary<int, float>() {
-        {0, Mathf.Infinity },
-        {1, 60f},
-        {2, 25f },
-        {3, 10f },
-        {4, 4f },
-        {5, 1.5f },
-        {6, 0.7f },
-        {7, 0.3f },
-        {8, 0.1f }
+    public float[] detailLevelDistances = new float[] {
+        Mathf.Infinity,
+        6000f,
+        2500f,
+        1000f,
+        400f,
+        150f,
+        70f,
+        30f,
+        10f
     };
 
     private void Start()
@@ -36,6 +39,11 @@ public class Planet : MonoBehaviour
         StartCoroutine(PlanetGenerationLoop());
     }
 
+    private void Update()
+    {
+        distanceToPlayer = Vector3.Distance(transform.position, player.position);
+    }
+
     /* Only update the planet once per second
     Other possible improvements include:
     1: Only updating once the player has moved far enough to be able to cause a noticable change in the LOD
@@ -43,10 +51,12 @@ public class Planet : MonoBehaviour
     3: Not recreating chunks that already exist */
     private IEnumerator PlanetGenerationLoop()
     {
-        while(true)
+        GenerateMesh();
+
+        while (true)
         {
-            yield return new WaitForSeconds(1f);
-            GenerateMesh();
+            yield return new WaitForSeconds(0.1f);
+            UpdateMesh();
         }
     }
 
@@ -72,7 +82,7 @@ public class Planet : MonoBehaviour
                 meshFilters[i].sharedMesh = new Mesh();
             }
 
-            terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, 4, directions[i], size);
+            terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, startResolution, directions[i], size, this);
         }
     }
 
@@ -82,6 +92,15 @@ public class Planet : MonoBehaviour
         foreach(TerrainFace face in terrainFaces)
         {
             face.ConstructTree();
+        }
+    }
+
+    // Update the mesh.
+    void UpdateMesh()
+    {
+        foreach (TerrainFace face in terrainFaces)
+        {
+            face.UpdateTree();
         }
     }
 }   
