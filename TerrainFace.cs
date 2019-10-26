@@ -134,7 +134,7 @@ public class Chunk
         // If the detail level is under max level and above 0. Max level depends on how many detail levels are defined in planets and needs to be changed manually.
         if (detailLevel <= maxDetail && detailLevel >= 0)
         {
-            if (Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size), planetScript.player.position) <= planetScript.detailLevelDistances[detailLevel])
+            if (Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size) + planetScript.transform.position, planetScript.player.position) <= planetScript.detailLevelDistances[detailLevel])
             {
                 // Assign the chunks children (grandchildren not included). 
                 // Position is calculated on a cube and based on the fact that each child has 1/2 the radius of the parent
@@ -157,7 +157,7 @@ public class Chunk
     // Update the chunk (and maybe its childrent too)
     public void UpdateChunk()
     {
-        float distanceToPlayer = Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size), planetScript.player.position);
+        float distanceToPlayer = Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size) + planetScript.transform.position, planetScript.player.position);
         if (detailLevel <= 8) {
             if (distanceToPlayer > planetScript.detailLevelDistances[detailLevel])
             {
@@ -194,7 +194,7 @@ public class Chunk
         } else
         {
             if (Mathf.Acos((Mathf.Pow(planetScript.size, 2) + Mathf.Pow(planetScript.distanceToPlayer, 2) - 
-               Mathf.Pow(Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size), planetScript.player.position), 2)) / 
+               Mathf.Pow(Vector3.Distance(planetScript.transform.TransformDirection(position.normalized * planetScript.size) + planetScript.transform.position, planetScript.player.position), 2)) / 
                (2 * planetScript.size * planetScript.distanceToPlayer)) < planetScript.cullingMinAngle)
             {
                 toBeRendered.Add(this);
