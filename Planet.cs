@@ -9,7 +9,6 @@ public class Planet : MonoBehaviour
     MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
 
-    public int startResolution = 9;
     public float cullingMinAngle = 1.91986218f;
     public float size = 1000; // Must be set to the size of the planet defined in the inspector
 
@@ -44,18 +43,14 @@ public class Planet : MonoBehaviour
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
     }
 
-    /* Only update the planet once per second
-    Other possible improvements include:
-    1: Only updating once the player has moved far enough to be able to cause a noticable change in the LOD
-    2: Only displaying chunks that are in sight
-    3: Not recreating chunks that already exist */
+    // Only update the planet once per second
     private IEnumerator PlanetGenerationLoop()
     {
         GenerateMesh();
 
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f);
             UpdateMesh();
         }
     }
@@ -82,7 +77,7 @@ public class Planet : MonoBehaviour
                 meshFilters[i].sharedMesh = new Mesh();
             }
 
-            terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, startResolution, directions[i], size, this);
+            terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, directions[i], size, this);
         }
     }
 
