@@ -1,12 +1,14 @@
 # LOD-Planets-in-Unity
 
 Notes:
-When I say "your player", I mean whatever player controller that you have, preferably a simple one that just flies around without collision or gravity. An empty game object will work fine for testing purposes, but you'll have to move it into position before you press play.
+* When I say "your player", I mean whatever player controller that you have, preferably a simple one that just flies around without collision or gravity. An empty game object that you rename to "Player" will work fine for testing purposes, but you'll have to move it into position before you press play.
+
+* The names of the game objects don't really matter, but are nice for organization.
 
 Basic:
 0. Drag all the scripts into Unity.
-1. Put the Planet.cs and the NoiseFilter.cs scripts on an empty game object.
-2. Put the GameManagement.cs and Presets.cs scripts on another empty game object.
+1. Put the Planet.cs and the NoiseFilter.cs scripts on an empty game object with the name "Planet".
+2. Put the GameManagement.cs and Presets.cs scripts on another empty game object with the name "Manager".
 
 In the GameManagement.cs script:
 1. Add the planet to the "Objects to move" array.
