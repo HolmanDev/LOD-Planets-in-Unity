@@ -1,5 +1,7 @@
 # LOD-Planets-in-Unity
 
+PLEASE READ THE LICENSE.txt FILE
+
 Notes:
 * When I say "your player", I mean whatever player controller that you have, preferably a simple one that just flies around without collision or gravity. An empty game object that you rename to "Player" will work fine for testing purposes, but you'll have to move it into position before you press play.
 
