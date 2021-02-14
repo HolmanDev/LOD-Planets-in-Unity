@@ -2,6 +2,13 @@
 
 PLEASE READ THE LICENSE.txt FILE
 
+NEW INSTRUCTIONS (for using the unity project)
+* Just add the project to Unity Hub and open it!
+* The universe and the player should be children of a GameObject called Universe. This Universe will be moved around to avoid floating point issues. 
+* To generate the planet, click on "Generate Entire Planet" in the Planet inspector. If it gives you a warning, follow it to the Presets component on the Game Manager and click Generate Quad Template. 
+* If you're having troubles with disapearing faces and weird runtime errors, try turning of multithreading by changing true to false when calling GenerateMesh in the PlanetGenerationLoop method in Planet.cs.
+
+OLD INSTRUCTIONS
 Notes:
 * When I say "your player", I mean whatever player controller that you have, preferably a simple one that just flies around without collision or gravity. An empty game object that you rename to "Player" will work fine for testing purposes, but you'll have to move it into position before you press play.
 
