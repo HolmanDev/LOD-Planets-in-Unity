@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557bb126d827714ba0b5732b0b66ce2, type: 3}
+  m_Name: Marslik Biome
+  m_EditorClassIdentifier: 
+  biomes:
+  - gradient:
+      serializedVersion: 2
+      key0: {r: 0.8862745, g: 0.82636696, b: 0.8235294, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0.35713497, g: 0.4433962, b: 0.25725347, a: 0}
+      key3: {r: 0.3019608, g: 0.37647063, b: 0.21568629, a: 0}
+      key4: {r: 0.27032158, g: 0.3018868, b: 0.22071913, a: 0}
+      key5: {r: 0.24705884, g: 0.2784314, b: 0.19215688, a: 0}
+      key6: {r: 0.43921572, g: 0.427451, b: 0.29803923, a: 0}
+      key7: {r: 0.61960787, g: 0.627451, b: 0.58431375, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 2313
+      ctime3: 3583
+      ctime4: 48191
+      ctime5: 64548
+      ctime6: 65171
+      ctime7: 65535
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    order: 0
+  - gradient:
+      serializedVersion: 2
+      key0: {r: 0.9921569, g: 0.5294118, b: 0.36862746, a: 1}
+      key1: {r: 0.83921576, g: 0.46274513, b: 0.33333334, a: 1}
+      key2: {r: 0.7058824, g: 0.45098042, b: 0.34901962, a: 0}
+      key3: {r: 0.54509807, g: 0.3921569, b: 0.31764707, a: 0}
+      key4: {r: 0.48235297, g: 0.3529412, b: 0.2901961, a: 0}
+      key5: {r: 0.33962262, g: 0.2781407, b: 0.22588108, a: 0}
+      key6: {r: 0.3372549, g: 0.32965308, b: 0.2784314, a: 0}
+      key7: {r: 0.61960787, g: 0.627451, b: 0.58431375, a: 0}
+      ctime0: 0
+      ctime1: 13917
+      ctime2: 34118
+      ctime3: 45906
+      ctime4: 65535
+      ctime5: 65535
+      ctime6: 65535
+      ctime7: 65535
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 5
+      m_NumAlphaKeys: 2
+    order: 0.5
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 0.5019608, g: 0, b: 0, a: 1}
+    key2: {r: 0.5019608, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 1, g: 0, b: 0, a: 0}
+    key7: {r: 1, g: 0, b: 0, a: 0}
+    ctime0: 5243
+    ctime1: 6554
+    ctime2: 55461
+    ctime3: 60292
+    ctime4: 60292
+    ctime5: 60292
+    ctime6: 61931
+    ctime7: 61931
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  distortion: 0.02
+  offset: 0.5
+  noiseScale: 3

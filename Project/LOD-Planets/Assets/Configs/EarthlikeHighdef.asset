@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c866b2913c0cd0643b55cd8ab4676d40, type: 3}
+  m_Name: EarthlikeHighdef
+  m_EditorClassIdentifier: 
+  NoiseFilters:
+  - center: {x: 0, y: 0, z: 0}
+    absoluteEnabled: 1
+    invertEnabled: 1
+    strength: 0.00015
+    octaves: 5
+    baseRoughness: 270
+    roughness: 3
+    persistance: 0.3
+    power: 2
+    clampingEnabled: 0
+    minValue: 0
+    maxValue: 1
+    multiplier: 1
+    turbulanceEnabled: 0
+    turbulance: 0
+    turbulanceSize: 1
+    positive: 0
