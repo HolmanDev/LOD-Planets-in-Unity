@@ -144,8 +144,8 @@ public class TerrainFace
         {
             for (int x = 0; x < textureWidthWithBorder; x++)
             {
-                float pointX = Mathf.Clamp((x - textureWidthWithBorder * 0.5f) / (width * 0.5f), -1, 1);
-                float pointY = Mathf.Clamp((y - textureWidthWithBorder * 0.5f) / (width * 0.5f), -1, 1);
+                float pointX = Mathf.Clamp((x + 0.5f - textureWidthWithBorder * 0.5f) / (width * 0.5f), -1, 1);
+                float pointY = Mathf.Clamp((y + 0.5f - textureWidthWithBorder * 0.5f) / (width * 0.5f), -1, 1);
                 float valuex = Mathf.Abs(x - textureWidthWithBorder * 0.5f) - width * 0.5f;
                 float valuey = Mathf.Abs(y - textureWidthWithBorder * 0.5f) - width * 0.5f;
                 float value = Mathf.Max(Mathf.Max(valuex, valuey), 0);
